@@ -1,7 +1,7 @@
 // 📁 src/api/session.js
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8080";
+const BASE_URL = import.meta.env.VITE_BASE_URL || "https://medex-meditation-backend.onrender.com/";
 
 // ====================== Public Sessions ======================
 
