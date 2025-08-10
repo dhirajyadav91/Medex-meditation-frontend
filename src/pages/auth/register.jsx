@@ -17,13 +17,15 @@ function Login() {
         { email, password }
       );
 
+      console.log("Register Response:", res.data);
+
       // Save token to localStorage
       localStorage.setItem("token", res.data.token);
 
       // Redirect to My Sessions page
       navigate("/sessions");
     } catch (err) {
-      setError("Invalid email or password");
+      setError("Register Error");
       console.error(err);
     }
   };

@@ -9,21 +9,23 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = async (e) => {s
-    const backendUrl = process.env.VITE_BASE_URL;
-
+  const handleLogin = async (e) => {
     e.preventDefault();
     setError(""); // reset old errors
+
     try {
+      // Remove trailing slash if any from backend URL
+      const backendUrl = import.meta.env.VITE_BASE_URL.replace(/\/$/, "");
+
       const res = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/api/v1/auth/login`,
+        `${backendUrl}/api/v1/auth/login`,
         { email, password }
       );
 
       console.log("Login Response:", res.data);
 
-      // Backend ka token path detect karo
-      let token = res.data?.token || res.data?.data?.token;
+      // Detect token path from backend response
+      const token = res.data?.token || res.data?.data?.token;
       if (!token) {
         setError("Login successful but token not found in response.");
         return;
@@ -33,7 +35,7 @@ function Login() {
       localStorage.setItem("token", token);
       console.log("Saved token:", token);
 
-      // Redirect to My Sessions page
+      // Redirect to Sessions page after login
       navigate("/sessions");
     } catch (err) {
       console.error("Login Error:", err);

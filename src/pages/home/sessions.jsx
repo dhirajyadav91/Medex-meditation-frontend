@@ -21,6 +21,7 @@ function Sessions() {
 
   const handlePublish = async () => {
     const token = localStorage.getItem("token");
+    console.log("Token:", token);
     if (!token) {
       alert("Please login first!");
       return;
