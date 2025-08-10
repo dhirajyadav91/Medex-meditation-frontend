@@ -4,17 +4,25 @@ import { Link } from "react-router-dom";
 function Wellcome() {
   return (
     <div className="flex flex-col h-screen bg-purple-100">
-      {/* Header section */}
-      <div className="font-bold text-center p-1 bg-gray-800 text-white border rounded-md">
-        <div>
-          <span>Share Meditation Routine</span>
-        </div>
+      <div className="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 relative">
+          {/* Logo left aligned */}
+          <Link to="/" className="font-bold text-lg bg-purple-200 px-3 py-1 rounded">
+            Medex
+          </Link>
 
-        <div className="flex items-end justify-end">
+          {/* Center paragraph absolutely centered */}
+          <p className="absolute left-1/2 transform -translate-x-1/2 font-bold text-lg text-purple-200 px-3 ">
+            Meditation share
+          </p>
+
+          {/* Menu right aligned */}
           <nav>
-            <ul className="flex gap-5 mr-4">
-              <li className="font-bold border rounded-md px-3 py-1 hover:bg-gray-600">
-                <Link to="/login">Login</Link>
+            <ul className="=">
+              <li>
+                 <Link to="/login" className="font-bold text-lg bg-purple-200 px-3 py-1 rounded">
+                Login
+          </Link>
               </li>
             </ul>
           </nav>

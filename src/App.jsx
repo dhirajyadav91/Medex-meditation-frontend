@@ -14,7 +14,6 @@ import SessionEditor from "./pages/home/sessionEditor";
 import Service from "./components/homeNavLink/service";
 import About from "./components/homeNavLink/about";
 import Contact from "./components/homeNavLink/contact";
-import Home from "./pages/wellcome/publicSession";
 
 const router = createBrowserRouter([
    {
