@@ -9,7 +9,9 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e) => {s
+    const backendUrl = process.env.VITE_BASE_URL;
+
     e.preventDefault();
     setError(""); // reset old errors
     try {
